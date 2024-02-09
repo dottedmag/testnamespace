@@ -20,4 +20,4 @@ jobs:
           key: ${{ runner.os }}-golang-testbuildjet
           restore-keys: |
             ${{ runner.os }}-golang-
-      - run: go test .
+      - run: go test -count=1 .
