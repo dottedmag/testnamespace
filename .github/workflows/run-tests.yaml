@@ -10,7 +10,7 @@ jobs:
       - uses: buildjet/setup-go@v4
         with:
           go-version: "1.22.0"
-        cache: false
+          cache: false
       - uses: buildjet/cache@v4
         with:
           path: |
