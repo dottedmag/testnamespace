@@ -5,19 +5,19 @@ on:
   - workflow_dispatch
 jobs:
   run-tests:
-    runs-on: buildjet-4vcpu-ubuntu-2204
+    runs-on: namespace-profile-default
     steps:
       - uses: actions/checkout@v4
-      - uses: buildjet/setup-go@v4
+      - uses: actions/setup-go@v4
         with:
           go-version: "1.22.0"
           cache: false
-      - uses: buildjet/cache@v4
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cache/go-build
             ~/go/pkg/mod
-          key: ${{ runner.os }}-golang-testbuildjet
+          key: ${{ runner.os }}-golang-testnamespace
           restore-keys: |
             ${{ runner.os }}-golang-
       - run: go test -count=1 .

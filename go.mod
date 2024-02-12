@@ -1,4 +1,4 @@
-module github.com/dottedmag/testbuildjet
+module github.com/dottedmag/testnamespace
 
 go 1.21
 
