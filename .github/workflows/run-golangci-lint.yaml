@@ -1,0 +1,17 @@
+name: run-golangci-lint
+run-name: Run golangci-lint
+on:
+  - push
+  - workflow_dispatch
+jobs:
+  golangci:
+    runs-on: namespace-profile-default
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v4
+        with:
+          go-version: "1.22.0"
+          cache: false
+      - uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.54
